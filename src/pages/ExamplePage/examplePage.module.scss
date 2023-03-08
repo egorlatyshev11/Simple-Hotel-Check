@@ -1,0 +1,17 @@
+@use "styles" as *;
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputContainer {
+  height: 50px;
+  width: 345px;
+}
