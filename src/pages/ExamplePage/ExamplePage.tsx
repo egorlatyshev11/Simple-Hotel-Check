@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import s from "./examplePage.module.scss";
 
-import { Button, Input } from "components";
+import { Button, Card, Input } from "components";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -26,6 +26,32 @@ export const ExamplePage = () => {
 
       <div>
         <Button className={s.button} title={"Войти"} />
+      </div>
+
+      <div className={s.cardContainer}>
+        <Card className={s.card}>
+          <Input
+            label={"Локация"}
+            value={input}
+            onChange={handleChange}
+            className={s.input}
+            autoFocus={true}
+          />
+          <Input
+            label={"Локация"}
+            value={input}
+            onChange={handleChange}
+            className={s.input}
+            autoFocus={true}
+          />
+          <Input
+            label={"Локация"}
+            value={input}
+            onChange={handleChange}
+            className={s.input}
+            autoFocus={true}
+          />
+        </Card>
       </div>
     </div>
   );

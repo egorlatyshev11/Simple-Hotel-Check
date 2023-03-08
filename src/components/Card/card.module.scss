@@ -1,0 +1,7 @@
+@use "styles" as *;
+
+.container {
+  background-color: $color-white;
+  @include radius-small;
+  @include shadow-card;
+}
