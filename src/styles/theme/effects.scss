@@ -1,13 +1,41 @@
 @mixin shadow-input {
   box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
 }
 
 @mixin shadow-card {
   box-shadow: 0px, 4px rgba(0, 0, 0, 0.04);
+}
+
+@mixin shadow-button {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+}
+
+@mixin radius-small {
+  border-radius: 4px;
+}
+
+@mixin radius-big {
   border-radius: 16px;
 }
 
-@mixin input {
-  border-radius: 4px;
+@mixin button-default {
+  background: linear-gradient(
+    104.34deg,
+    $color-green -15.34%,
+    $color-orange 145.95%
+  );
+}
+
+@mixin button-hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(104.34deg, $color-green -15.34%, $color-orange 145.95%);
+}
+
+@mixin button-active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(104.34deg, $color-green -15.34%, $color-orange 145.95%);
 }

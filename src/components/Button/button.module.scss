@@ -1,0 +1,24 @@
+@use "styles" as *;
+
+.button {
+  font-size: 16px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+  color: $color-white;
+
+  @include button-default;
+  @include shadow-button;
+  @include radius-small;
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    @include button-hover;
+  }
+
+  &:active {
+    @include button-active;
+  }
+}

@@ -8,10 +8,17 @@
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .inputContainer {
   height: 50px;
   width: 345px;
+}
+
+.button {
+  padding: 15px 150px;
 }

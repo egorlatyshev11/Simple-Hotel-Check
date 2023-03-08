@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import s from "./examplePage.module.scss";
 
-import { Input } from "components";
+import { Button, Input } from "components";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -22,6 +22,10 @@ export const ExamplePage = () => {
           className={s.input}
           autoFocus={true}
         />
+      </div>
+
+      <div>
+        <Button className={s.button} title={"Войти"} />
       </div>
     </div>
   );
