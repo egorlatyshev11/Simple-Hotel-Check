@@ -2,6 +2,6 @@
 
 .container {
   background-color: $color-white;
-  @include radius-small;
+  @include radius-big;
   @include shadow-card;
 }

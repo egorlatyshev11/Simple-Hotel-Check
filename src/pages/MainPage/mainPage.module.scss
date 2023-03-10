@@ -1,1 +1,14 @@
 @use "styles" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 360px 664px;
+  grid-template-rows: repeat(2, 410px);
+  justify-content: center;
+  gap: 24px;
+}
+
+.hotelSection {
+  grid-column: 2;
+  margin: 0;
+}
