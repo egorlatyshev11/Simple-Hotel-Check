@@ -1,0 +1,48 @@
+@use "styles" as *;
+
+.container {
+  max-width: 664px;
+  padding: 48px 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: $fw-regular;
+}
+
+.date {
+  font-weight: $fw-regular;
+  font-size: 24px;
+  line-height: 28px;
+  color: $color-green;
+}
+
+.liked {
+  margin-bottom: 12px;
+
+  font-weight: $fw-light;
+  font-size: 17px;
+  line-height: 22px;
+  color: $color-light-black;
+}
+
+.likeAmount {
+  font-weight: $fw-medium;
+  font-size: 17px;
+  line-height: 22px;
+}

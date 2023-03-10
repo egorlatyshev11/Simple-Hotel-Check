@@ -46,7 +46,7 @@ const HotelCard: FC<HotelCardProps> = ({
           {isLiked ? <LikeFill /> : <Like />}
         </button>
         <div className={s.price}>
-          Price: <span className={s.priceAmount}>{price}₽</span>
+          Price: <span className={s.priceAmount}>{price * days}₽</span>
         </div>
       </div>
     </div>

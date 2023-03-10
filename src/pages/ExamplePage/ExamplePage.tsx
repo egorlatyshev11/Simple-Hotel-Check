@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import s from "./examplePage.module.scss";
 
 import { Button, Card, Input, Slider } from "components";
-import { Filter, Header, HotelCard, Login } from "features";
-import { SliderMock } from "shared/mocks/mock_slider";
+import { Filter, Header, HotelCard, HotelSection, Login } from "features";
 import { HotelCardMock } from "shared/mocks/mock_hotel_card";
+import { HotelSectionMock } from "shared/mocks/mock_hotel_section";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -70,11 +70,15 @@ export const ExamplePage = () => {
       </div>
 
       <div>
-        <Slider images={SliderMock.images} />
+        <Slider />
       </div>
 
       <div>
         <HotelCard {...HotelCardMock} />
+      </div>
+
+      <div>
+        <HotelSection {...HotelSectionMock} />
       </div>
     </div>
   );
