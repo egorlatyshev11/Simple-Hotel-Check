@@ -1,13 +1,6 @@
 import React, { FC } from "react";
 import { Controller, useForm, SubmitHandler } from "react-hook-form";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
 import cn from "classnames";
-
-import { useNavigate } from "react-router-dom";
 
 import s from "./login.module.scss";
 import { Card, Input, Button } from "components";
