@@ -3,8 +3,9 @@ import React, { useState } from "react";
 
 import s from "./examplePage.module.scss";
 
-import { Button, Card, Input } from "components";
+import { Button, Card, Input, Slider } from "components";
 import { Filter, Header, Login } from "features";
+import { SliderMock } from "shared/mocks/mock_slider";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -65,6 +66,10 @@ export const ExamplePage = () => {
 
       <div>
         <Filter />
+      </div>
+
+      <div>
+        <Slider images={SliderMock.images} />
       </div>
     </div>
   );
