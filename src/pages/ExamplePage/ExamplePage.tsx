@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import s from "./examplePage.module.scss";
 
 import { Button, Card, Input } from "components";
+import { Login } from "features";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -52,6 +53,10 @@ export const ExamplePage = () => {
             autoFocus={true}
           />
         </Card>
+      </div>
+
+      <div>
+        <Login />
       </div>
     </div>
   );

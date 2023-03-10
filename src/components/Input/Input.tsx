@@ -9,6 +9,7 @@ interface InputProps {
   onChange: (value: string) => void;
   label?: string;
   className?: string;
+  labelClassName?: string;
   type?: string;
 }
 
@@ -17,11 +18,14 @@ const Input: FC<InputProps> = ({
   onChange,
   label,
   className,
+  labelClassName,
   type = "text",
 }) => {
   return (
     <div>
-      {label ? <span className={s.label}>{label}</span> : null}
+      {label ? (
+        <span className={cn(s.label, labelClassName)}>{label}</span>
+      ) : null}
       <input
         onChange={(e) => onChange(e.target.value)}
         type={type}
