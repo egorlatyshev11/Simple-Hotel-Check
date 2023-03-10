@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import s from "./examplePage.module.scss";
 
 import { Button, Card, Input } from "components";
-import { Login } from "features";
+import { Header, Login } from "features";
 
 export const ExamplePage = () => {
   const [input, setInput] = useState("");
@@ -57,6 +57,10 @@ export const ExamplePage = () => {
 
       <div>
         <Login />
+      </div>
+
+      <div>
+        <Header />
       </div>
     </div>
   );

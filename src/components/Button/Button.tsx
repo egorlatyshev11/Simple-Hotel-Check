@@ -6,7 +6,7 @@ import s from "./button.module.scss";
 
 interface ButtonProps {
   onClick: () => void;
-  title: string;
+  title?: string;
   className?: string;
   type?: "submit" | "reset" | "button";
 }
