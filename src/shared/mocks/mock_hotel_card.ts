@@ -4,5 +4,5 @@ export const HotelCardMock = {
   price: 23924,
   hotelName: "Moscow Marriott Grand Hotel",
   days: 1,
-  isLiked: false,
+  isLiked: true,
 };

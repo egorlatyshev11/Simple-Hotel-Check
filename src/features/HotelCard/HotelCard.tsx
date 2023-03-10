@@ -27,9 +27,11 @@ const HotelCard: FC<HotelCardProps> = ({
 }) => {
   return (
     <div className={s.container}>
-      <div className={s.icon}>
-        <HotelIcon />
-      </div>
+      {isLiked && (
+        <div className={s.icon}>
+          <HotelIcon />
+        </div>
+      )}
       <div>
         <h3 className={s.name}>{hotelName}</h3>
         <div className={s.date}>
@@ -46,7 +48,8 @@ const HotelCard: FC<HotelCardProps> = ({
           {isLiked ? <LikeFill /> : <Like />}
         </button>
         <div className={s.price}>
-          Price: <span className={s.priceAmount}>{price * days}₽</span>
+          <span className={s.priveTag}>Price:</span>{" "}
+          <span className={s.priceAmount}>{price * days}₽</span>
         </div>
       </div>
     </div>

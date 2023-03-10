@@ -36,9 +36,9 @@ const HotelSection: FC<HotelSectionProps> = ({
           Добавлено в Избранное:{" "}
           <span className={s.likeAmount}>{likeAmount}</span> отеля
         </h3>
-        <div>
+        <div className={s.list}>
           {hotels.map((hotel: any, id: number) => {
-            return <HotelCard {...hotel} />;
+            return <HotelCard {...hotel} key={id} />;
           })}
         </div>
       </div>

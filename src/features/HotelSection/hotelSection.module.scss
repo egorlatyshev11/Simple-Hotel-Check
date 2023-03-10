@@ -46,3 +46,21 @@
   font-size: 17px;
   line-height: 22px;
 }
+
+.list {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $color-bright-grey;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 100px;
+  background: $color-green;
+}

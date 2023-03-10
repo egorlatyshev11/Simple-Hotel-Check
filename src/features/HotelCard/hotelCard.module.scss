@@ -56,12 +56,21 @@
 }
 
 .price {
+  position: relative;
+  width: 100px;
+  height: 21px;
   text-align: bottom;
 
   font-weight: $fw-light;
   font-size: 11px;
   line-height: 22px;
   color: $color-medium-grey;
+}
+
+.priceTag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .priceAmount {
