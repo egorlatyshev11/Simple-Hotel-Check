@@ -1,0 +1,17 @@
+@use "styles" as *;
+
+.container {
+  max-width: 360px;
+  height: 410px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin-bottom: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
