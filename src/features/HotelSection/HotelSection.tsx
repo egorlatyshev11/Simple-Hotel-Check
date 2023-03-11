@@ -11,6 +11,8 @@ import { useAppDispatch, useAppSelector } from "redux/hooks";
 const HotelSection: FC = () => {
   const hotels = useAppSelector((state) => state.getHotels.hotels);
   const info = useAppSelector((state) => state.getInfo);
+  const favorites = useAppSelector((state) => state.favoriteReducer);
+  const favoriteAmount = Object.entries(favorites).length;
 
   return (
     <Card className={s.container}>
@@ -18,7 +20,7 @@ const HotelSection: FC = () => {
         <h2 className={s.title}>
           <span>Отели</span>
           <Location />
-          {/* <span>{hotels[0].location.name}</span> */}
+          <span>{hotels[0]?.location.name}</span>
         </h2>
         <span className={s.date}>{info.date}</span>
       </div>
@@ -26,7 +28,7 @@ const HotelSection: FC = () => {
       <div className={s.list}>
         <h3 className={s.liked}>
           Добавлено в Избранное:{" "}
-          {/* <span className={s.likeAmount}>{likeAmount}</span> отеля */}
+          <span className={s.likeAmount}>{favoriteAmount}</span> отеля
         </h3>
         <div>
           {hotels.map((hotel: any, id: number) => {

@@ -18,12 +18,7 @@ interface HotelsInfo {
 
 const Filter = () => {
   const dispatch = useAppDispatch();
-  const info = useAppSelector((state) => state.getInfo);
-  const {
-    formState: { errors },
-    handleSubmit,
-    control,
-  } = useForm<HotelsInfo>({ mode: "onSubmit" });
+  const { handleSubmit, control } = useForm<HotelsInfo>({ mode: "onSubmit" });
 
   const handleInput = (data: HotelsInfo) => {
     dispatch(changeInfoValue(data));
