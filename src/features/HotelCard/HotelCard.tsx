@@ -12,9 +12,10 @@ interface HotelCardProps {
   hotelName: string;
   stars: number;
   date: string;
-  days: number;
-  price: number;
+  days: string;
+  priceAvg: number;
   isLiked: boolean;
+  isFull: boolean;
 }
 
 const HotelCard: FC<HotelCardProps> = ({
@@ -22,12 +23,13 @@ const HotelCard: FC<HotelCardProps> = ({
   stars,
   date,
   days,
-  price,
+  priceAvg,
   isLiked,
+  isFull = false,
 }) => {
   return (
     <div className={s.container}>
-      {isLiked && (
+      {isFull && (
         <div className={s.icon}>
           <HotelIcon />
         </div>
@@ -49,7 +51,7 @@ const HotelCard: FC<HotelCardProps> = ({
         </button>
         <div className={s.price}>
           <span className={s.priveTag}>Price:</span>{" "}
-          <span className={s.priceAmount}>{price * days}₽</span>
+          <span className={s.priceAmount}>{priceAvg}₽</span>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export const MainPage = () => {
       <div className={s.container}>
         <Filter />
         <div className={s.hotelSection}>
-          <HotelSection {...HotelSectionMock} />
+          <HotelSection />
         </div>
         <LikedSection likedHotels={LikedSectionMock} />
       </div>
