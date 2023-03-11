@@ -12,8 +12,6 @@ const HotelSection: FC = () => {
   const hotels = useAppSelector((state) => state.getHotels.hotels);
   const info = useAppSelector((state) => state.getInfo);
 
-  console.log(hotels);
-
   return (
     <Card className={s.container}>
       <div className={s.header}>
@@ -25,12 +23,12 @@ const HotelSection: FC = () => {
         <span className={s.date}>{info.date}</span>
       </div>
       <Slider />
-      <div>
+      <div className={s.list}>
         <h3 className={s.liked}>
           Добавлено в Избранное:{" "}
           {/* <span className={s.likeAmount}>{likeAmount}</span> отеля */}
         </h3>
-        <div className={s.list}>
+        <div>
           {hotels.map((hotel: any, id: number) => {
             return (
               <HotelCard
