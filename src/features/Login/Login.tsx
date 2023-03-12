@@ -7,6 +7,7 @@ import { Card, Input, Button } from "components";
 
 import { isEmailValid, isPasswordValid } from "shared/helpers/validate";
 import { User } from "shared/types/user";
+import { useNavigate } from "react-router";
 
 interface LoginProps {}
 
@@ -16,7 +17,9 @@ const Login: FC<LoginProps> = () => {
     handleSubmit,
     reset,
     control,
-  } = useForm<User>({ mode: "onSubmit" });
+  } = useForm<User>();
+
+  const navigate = useNavigate();
 
   const registerOptions = {
     email: {
@@ -33,7 +36,7 @@ const Login: FC<LoginProps> = () => {
   };
 
   const onSubmit = (data: User) => {
-    console.log(data);
+    navigate("/main");
     reset();
   };
 
