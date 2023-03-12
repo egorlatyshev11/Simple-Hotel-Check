@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "redux/hooks";
 
@@ -19,6 +19,7 @@ interface HotelsInfo {
 const Filter = () => {
   const dispatch = useAppDispatch();
   const { handleSubmit, control } = useForm<HotelsInfo>({ mode: "onSubmit" });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInput = (data: HotelsInfo) => {
     dispatch(changeInfoValue(data));

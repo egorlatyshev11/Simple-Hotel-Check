@@ -10,6 +10,8 @@ import { useAppDispatch, useAppSelector } from "redux/hooks";
 
 const HotelSection: FC = () => {
   const hotels = useAppSelector((state) => state.getHotels.hotels);
+  const error = useAppSelector((state) => state.getHotels.isError);
+  const loading = useAppSelector((state) => state.getHotels.isLoading);
   const info = useAppSelector((state) => state.getInfo);
   const favorites = useAppSelector((state) => state.favoriteReducer);
   // const favoriteAmount = Object.entries(favorites).length;
@@ -31,21 +33,32 @@ const HotelSection: FC = () => {
           Добавлено в Избранное:{" "}
           <span className={s.likeAmount}>{favorites.length}</span> отеля
         </h3>
-        <div>
-          {hotels.map((hotel: any, id: number) => {
-            return (
-              <HotelCard
-                {...hotel}
-                hotelId={id}
-                key={id}
-                isFull={true}
-                date={info.date}
-                days={info.days}
-                isLiked={false}
-              />
-            );
-          })}
-        </div>
+        {!loading ? (
+          <div>
+            {" "}
+            {!error ? (
+              <div>
+                {hotels.map((hotel: any, id: number) => {
+                  return (
+                    <HotelCard
+                      {...hotel}
+                      hotelId={id}
+                      key={id}
+                      isFull={true}
+                      date={info.date}
+                      days={info.days}
+                      isLiked={false}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <span className={s.error}>something went wrong</span>
+            )}
+          </div>
+        ) : (
+          <span className={s.error}>Loading...</span>
+        )}
       </div>
     </Card>
   );

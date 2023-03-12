@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import {
+  GET_HOTELS_ERROR,
   GET_HOTELS_FETCH,
   GET_HOTELS_SUCCESS,
 } from "redux/reducers/getHotelsReducer/getHotelsActions";
@@ -9,9 +10,13 @@ import { getHotelsApi } from "shared/helpers/getHotelsApi";
 export const getInfo = (state) => state.getInfo;
 
 async function hotelsFetch(info) {
-  const data = await getHotelsApi(info);
+  try {
+    const data = await getHotelsApi(info);
 
-  return data.data;
+    return data.data;
+  } catch (err) {
+    return false;
+  }
 }
 
 function* workGetHotelsFetch() {
@@ -19,7 +24,11 @@ function* workGetHotelsFetch() {
 
   const hotels = yield call(hotelsFetch, info);
 
-  yield put({ type: GET_HOTELS_SUCCESS, hotels });
+  if (hotels) {
+    yield put({ type: GET_HOTELS_SUCCESS, hotels });
+  } else {
+    yield put({ type: GET_HOTELS_ERROR });
+  }
 }
 
 function* getHotelsSaga() {
