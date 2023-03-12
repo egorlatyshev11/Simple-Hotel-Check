@@ -1,17 +1,15 @@
-import React, { FC } from "react";
-import { Controller, useForm, SubmitHandler } from "react-hook-form";
+import { FC } from "react";
+import { Controller, useForm } from "react-hook-form";
 import cn from "classnames";
-
-import s from "./login.module.scss";
-import { Card, Input, Button } from "components";
-
-import { isEmailValid, isPasswordValid } from "shared/helpers/validate";
-import { User } from "shared/types/user";
 import { useNavigate } from "react-router";
 
-interface LoginProps {}
+import { Card, Input, Button } from "components";
+import { User } from "shared/types/user";
+import { isEmailValid, isPasswordValid } from "shared/helpers/validate";
 
-const Login: FC<LoginProps> = () => {
+import s from "./login.module.scss";
+
+const Login: FC = () => {
   const {
     formState: { errors },
     handleSubmit,

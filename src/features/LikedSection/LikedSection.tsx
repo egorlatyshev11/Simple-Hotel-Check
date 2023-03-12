@@ -1,23 +1,25 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import cn from "classnames";
-import { useAppSelector } from "redux/hooks";
 
 import { Card } from "components";
 import { HotelCard } from "features";
 
-import s from "./likedSection.module.scss";
+import { useAppSelector } from "redux/hooks";
+import { Hotel } from "shared/types/hotel";
 
 import { ReactComponent as SelectDown } from "../../assets/icons/selectDown.svg";
 import { ReactComponent as SelectUp } from "../../assets/icons/selectUp.svg";
+
+import s from "./likedSection.module.scss";
 
 const LikedSection: FC = () => {
   const [isRating, setIsRating] = useState(true);
   const [isPrice, setIsPrice] = useState(true);
   const [isButton, setIsButton] = useState(true);
   const favorites = useAppSelector((state) => state.favoriteReducer);
-  const [hotels, setHotels] = useState<any>();
+  const [hotels, setHotels] = useState<Hotel[]>();
 
-  const sortedArr = hotels?.sort((a: any, b: any) => {
+  const sortedArr = hotels?.sort((a: Hotel, b: Hotel) => {
     if (isButton) {
       return !isRating ? a.stars - b.stars : b.stars - a.stars;
     } else {

@@ -1,5 +1,4 @@
 import { Login } from "features";
-import React from "react";
 import s from "./loginPage.module.scss";
 
 export const LoginPage = () => {

@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import cn from "classnames";
 
 import s from "./input.module.scss";

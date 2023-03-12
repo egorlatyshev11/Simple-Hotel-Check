@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import s from "./slider.module.scss";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
 import { SliderMock } from "shared/mocks/mock_slider";
+
+import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.min.css";
+import s from "./slider.module.scss";
 
 const Slider: FC = () => {
   return (

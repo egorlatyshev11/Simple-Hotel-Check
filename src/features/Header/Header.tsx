@@ -1,9 +1,8 @@
-import React from "react";
-
-import s from "./header.module.scss";
+import { useNavigate } from "react-router";
 
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg";
-import { useNavigate } from "react-router";
+
+import s from "./header.module.scss";
 
 const Header = () => {
   const navigate = useNavigate();

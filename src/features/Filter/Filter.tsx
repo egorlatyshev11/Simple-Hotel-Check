@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { useAppDispatch } from "redux/hooks";
 
 import { Button, Card, Input } from "components";
 
-import s from "./filter.module.scss";
-
+import { currentDate } from "shared/helpers/date";
 import { changeInfoValue } from "redux/reducers/getInfoReducer/getInfoActions";
 import { getHotelsFetch } from "redux/reducers/getHotelsReducer/getHotelsActions";
-import { currentDate, getCurrentDate } from "shared/helpers/date";
+
+import s from "./filter.module.scss";
 
 interface HotelsInfo {
   location: string;

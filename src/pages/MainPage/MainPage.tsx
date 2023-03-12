@@ -1,9 +1,6 @@
-import React from "react";
 import s from "./mainPage.module.scss";
 
 import { Filter, Header, HotelSection, LikedSection } from "features";
-import { HotelSectionMock } from "shared/mocks/mock_hotel_section";
-import { LikedSectionMock } from "shared/mocks/mock_liked_section";
 
 export const MainPage = () => {
   return (

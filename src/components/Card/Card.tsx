@@ -1,8 +1,7 @@
 import { FC, ReactNode } from "react";
+import cn from "classnames";
 
 import s from "./card.module.scss";
-
-import cn from "classnames";
 
 interface CardProps {
   children: ReactNode;

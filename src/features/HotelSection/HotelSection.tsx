@@ -1,12 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import { Card, Slider } from "components";
 import { HotelCard } from "features";
+import { useAppSelector } from "redux/hooks";
 
-import s from "./hotelSection.module.scss";
+import { Hotel } from "shared/types/hotel";
 
 import { ReactComponent as Location } from "../../assets/icons/location.svg";
-import { useAppDispatch, useAppSelector } from "redux/hooks";
+
+import s from "./hotelSection.module.scss";
 
 const HotelSection: FC = () => {
   const hotels = useAppSelector((state) => state.getHotels.hotels);
@@ -37,7 +39,7 @@ const HotelSection: FC = () => {
             {" "}
             {!error ? (
               <div>
-                {hotels.map((hotel: any, id: number) => {
+                {hotels.map((hotel: Hotel, id: number) => {
                   return (
                     <HotelCard
                       {...hotel}

@@ -1,20 +1,20 @@
-//@ts-nocheck
-import React, { FC, useState } from "react";
+import { FC } from "react";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
 
-import s from "./hotelCard.module.scss";
+import {
+  removeHotelFromFavorite,
+  setHotelToFavorite,
+} from "redux/reducers/favoriteReducer/favoriteActions";
 
 import { ReactComponent as HotelIcon } from "../../assets/icons/hotel.svg";
 import { ReactComponent as StarFill } from "../../assets/icons/starFill.svg";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 import { ReactComponent as Like } from "../../assets/icons/like.svg";
 import { ReactComponent as LikeFill } from "../../assets/icons/likeFill.svg";
-import { useAppDispatch, useAppSelector } from "redux/hooks";
-import {
-  removeHotelFromFavorite,
-  setHotelToFavorite,
-} from "redux/reducers/favoriteReducer/favoriteActions";
 
-interface HotelCardProps {
+import s from "./hotelCard.module.scss";
+
+export interface HotelCardProps {
   hotelName: string;
   hotelId: number;
   stars: number;
@@ -71,7 +71,7 @@ const HotelCard: FC<HotelCardProps> = ({
           <span>{date}</span> - <span>{days} день</span>
         </div>
         <div>
-          {[...Array(5)].map((item: number, id: number) => {
+          {[...Array(5)].map((_, id: number) => {
             return id < stars ? <StarFill key={id} /> : <Star key={id} />;
           })}
         </div>
