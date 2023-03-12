@@ -69,8 +69,9 @@
 
 .priceTag {
   position: absolute;
-  left: 0;
+  left: -25%;
   bottom: 0;
+  height: 19px;
 }
 
 .priceAmount {
@@ -79,4 +80,8 @@
   font-weight: $fw-regular;
   font-size: 17px;
   color: $color-light-black;
+}
+
+.price {
+  position: relative;
 }

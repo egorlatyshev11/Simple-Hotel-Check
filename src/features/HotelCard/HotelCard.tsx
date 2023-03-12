@@ -36,6 +36,7 @@ const HotelCard: FC<HotelCardProps> = ({
   isFull = false,
 }) => {
   const favorites = useAppSelector((state) => state.favoriteReducer);
+
   const dispatch = useAppDispatch();
 
   const handleLike = () => {
@@ -78,12 +79,12 @@ const HotelCard: FC<HotelCardProps> = ({
       <div className={s.likeWrapper}>
         <button
           className={s.like}
-          onClick={!isLiked ? handleLike : handleDislike}
+          onClick={!favorites[hotelId] ? handleLike : handleDislike}
         >
           {favorites[hotelId] ? <LikeFill /> : <Like />}
         </button>
         <div className={s.price}>
-          <span className={s.priveTag}>Price:</span>{" "}
+          <span className={s.priceTag}>Price:</span>{" "}
           <span className={s.priceAmount}>{priceAvg}₽</span>
         </div>
       </div>
