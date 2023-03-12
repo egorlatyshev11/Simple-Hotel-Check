@@ -3,7 +3,6 @@ import createSagaMiddleware from "redux-saga";
 import { loadState, saveState } from "shared/helpers/localStorage";
 import rootReducer from "./reducers/rootReducer";
 import rootSaga from "./sagas/rootSaga";
-import favoriteReducer from "./reducers/favoriteReducer/favoriteReducer";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -11,7 +10,7 @@ const persistedState = loadState();
 
 const store = createStore(
   rootReducer,
-  // persistedState,
+  persistedState,
   applyMiddleware(sagaMiddleware)
 );
 

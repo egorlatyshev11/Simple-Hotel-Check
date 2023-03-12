@@ -14,23 +14,25 @@ const LikedSection: FC = () => {
   const [isRating, setIsRating] = useState(true);
   const [isPrice, setIsPrice] = useState(false);
   const favorites = useAppSelector((state) => state.favoriteReducer);
-  // const [hotels, setHotels] = useState<any>();
+  const [hotels, setHotels] = useState<any>();
 
-  // useEffect(() => {
-  //   const arr = Object.entries(favorites);
+  useEffect(() => {
+    const arr = Object.entries(favorites);
 
-  //   if (arr.length) {
-  //     const res = arr.map((hotel: any) => {
-  //       return {
-  //         hotelId: hotel[0],
-  //         ...hotel[1],
-  //         isLiked: true,
-  //         stars: hotel[1].stars,
-  //       };
-  //     });
-  //     setHotels(res);
-  //   }
-  // }, [favorites]);
+    if (arr.length) {
+      const res = arr.map((hotel: any) => {
+        return {
+          hotelId: hotel[0],
+          ...hotel[1],
+          isLiked: true,
+          // stars: hotel[1].stars,
+        };
+      });
+      setHotels(res);
+    }
+  }, [favorites]);
+
+  // console.log(hotels);
 
   const handleSelect = () => {
     setIsRating((prev) => !prev);
@@ -55,8 +57,10 @@ const LikedSection: FC = () => {
         </button>
       </div>
       <div className={s.list}>
-        {favorites?.map((hotel: any, id: number) => {
-          return <HotelCard {...hotel} key={id} hotelId={id} />;
+        {hotels?.map((hotel: any, id: number) => {
+          return Object.keys(favorites).length === 0 ? null : (
+            <HotelCard {...hotel} key={id} />
+          );
         })}
       </div>
     </Card>

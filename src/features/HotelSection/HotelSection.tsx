@@ -14,8 +14,7 @@ const HotelSection: FC = () => {
   const loading = useAppSelector((state) => state.getHotels.isLoading);
   const info = useAppSelector((state) => state.getInfo);
   const favorites = useAppSelector((state) => state.favoriteReducer);
-  // const favoriteAmount = Object.entries(favorites).length;
-  // console.log(hotels);
+  const favoriteAmount = Object.entries(favorites).length;
 
   return (
     <Card className={s.container}>
@@ -31,7 +30,7 @@ const HotelSection: FC = () => {
       <div className={s.list}>
         <h3 className={s.liked}>
           Добавлено в Избранное:{" "}
-          <span className={s.likeAmount}>{favorites.length}</span> отеля
+          <span className={s.likeAmount}>{favoriteAmount}</span> отеля
         </h3>
         {!loading ? (
           <div>
@@ -42,7 +41,6 @@ const HotelSection: FC = () => {
                   return (
                     <HotelCard
                       {...hotel}
-                      hotelId={id}
                       key={id}
                       isFull={true}
                       date={info.date}

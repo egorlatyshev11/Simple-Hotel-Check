@@ -35,29 +35,26 @@ const HotelCard: FC<HotelCardProps> = ({
   isLiked,
   isFull = false,
 }) => {
-  const [isFavorite, setIsFavorite] = useState(isLiked);
-
   const favorites = useAppSelector((state) => state.favoriteReducer);
   const dispatch = useAppDispatch();
 
   const handleLike = () => {
-    if (!isFavorite) {
-      setIsFavorite((prev) => !prev);
-      dispatch(
-        setHotelToFavorite({
+    dispatch(
+      setHotelToFavorite({
+        [hotelId]: {
           hotelName,
           date,
           days,
           priceAvg,
           stars,
-          hotelId,
-          isLiked: true,
-        })
-      );
-    } else {
-      setIsFavorite((prev) => !prev);
-      dispatch(removeHotelFromFavorite(hotelId));
-    }
+          isLiked,
+        },
+      })
+    );
+  };
+
+  const handleDislike = () => {
+    dispatch(removeHotelFromFavorite(hotelId));
   };
 
   return (
@@ -79,8 +76,11 @@ const HotelCard: FC<HotelCardProps> = ({
         </div>
       </div>
       <div className={s.likeWrapper}>
-        <button className={s.like} onClick={handleLike}>
-          {isFavorite ? <LikeFill /> : <Like />}
+        <button
+          className={s.like}
+          onClick={!isLiked ? handleLike : handleDislike}
+        >
+          {favorites[hotelId] ? <LikeFill /> : <Like />}
         </button>
         <div className={s.price}>
           <span className={s.priveTag}>Price:</span>{" "}
