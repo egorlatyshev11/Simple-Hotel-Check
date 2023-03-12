@@ -14,7 +14,9 @@
   outline: none;
   @include radius-small;
 
-  font-weight: $fw-light;
+  font-family: $font-Roboto;
+  font-weight: 300;
+  font-size: 17px;
 }
 
 .label {
