@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Simple-Hotel-Check/static/css/main.ff8d25eb.css",
+    "main.js": "/Simple-Hotel-Check/static/js/main.d1454319.js",
+    "static/media/background.png": "/Simple-Hotel-Check/static/media/background.6bd8f5eaf9d46fad436d.png",
+    "static/media/AktivGroteskCorp-Regular.woff": "/Simple-Hotel-Check/static/media/AktivGroteskCorp-Regular.9cc01aaafaf223cc7b6f.woff",
+    "static/media/AktivGroteskCorp-Bold.woff": "/Simple-Hotel-Check/static/media/AktivGroteskCorp-Bold.43e69914564a51751cb4.woff",
+    "static/media/image1.png": "/Simple-Hotel-Check/static/media/image1.90bf6711c5a42d5dfaef.png",
+    "static/media/image3.png": "/Simple-Hotel-Check/static/media/image3.ab172e3b5563b1778b3e.png",
+    "static/media/image2.png": "/Simple-Hotel-Check/static/media/image2.e6230091b45b933d6638.png",
+    "static/media/star.svg": "/Simple-Hotel-Check/static/media/star.8f1b0d15f28a809ac23aed477c658507.svg",
+    "static/media/hotel.svg": "/Simple-Hotel-Check/static/media/hotel.51d05d797890bdb911ffc5d4df8f6dc7.svg",
+    "static/media/starFill.svg": "/Simple-Hotel-Check/static/media/starFill.771e20eb2d1ebb67ae10a3b0656ce894.svg",
+    "static/media/like.svg": "/Simple-Hotel-Check/static/media/like.e94699b0175ba962d0f8c3c866eb0c7c.svg",
+    "static/media/likeFill.svg": "/Simple-Hotel-Check/static/media/likeFill.3e152b3d347d50b649808dad96dfe55e.svg",
+    "index.html": "/Simple-Hotel-Check/index.html",
+    "static/media/logout.svg": "/Simple-Hotel-Check/static/media/logout.0be655d222d4953b6a4bcadfea0a5398.svg",
+    "static/media/selectDown.svg": "/Simple-Hotel-Check/static/media/selectDown.888ce2ffd06a00b6f9a891bdc466e580.svg",
+    "static/media/selectUp.svg": "/Simple-Hotel-Check/static/media/selectUp.b8d9ee4162648e2556ce2550c79eab2d.svg",
+    "static/media/location.svg": "/Simple-Hotel-Check/static/media/location.ecfc16f7a5f0685dc81942c312c3f763.svg",
+    "main.ff8d25eb.css.map": "/Simple-Hotel-Check/static/css/main.ff8d25eb.css.map",
+    "main.d1454319.js.map": "/Simple-Hotel-Check/static/js/main.d1454319.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff8d25eb.css",
+    "static/js/main.d1454319.js"
+  ]
+}
