@@ -44,6 +44,16 @@
   border: 1px solid $color-green;
 }
 
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.selectDown {
+  background-color: red;
+}
+
 .list {
   overflow: scroll;
   overflow-x: hidden;

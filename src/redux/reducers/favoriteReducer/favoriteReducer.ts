@@ -10,7 +10,6 @@ import {
 const initialState = {};
 
 const favoriteReducer = (state = initialState, action) => {
-  console.log(state);
   switch (action.type) {
     case ADD_HOTEL_TO_FAVORITE:
       return {

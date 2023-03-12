@@ -10,7 +10,6 @@ const getHotelsReducer = (
   state = { hotels: [], isLoading: false, isError: false },
   action
 ) => {
-  console.log(state);
   switch (action.type) {
     case GET_HOTELS_SUCCESS:
       return {

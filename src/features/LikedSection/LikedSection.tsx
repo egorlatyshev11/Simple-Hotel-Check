@@ -7,14 +7,23 @@ import { HotelCard } from "features";
 
 import s from "./likedSection.module.scss";
 
-import { ReactComponent as Select } from "../../assets/icons/select.svg";
-import { ReactComponent as SelectActive } from "../../assets/icons/selectActive.svg";
+import { ReactComponent as SelectDown } from "../../assets/icons/selectDown.svg";
+import { ReactComponent as SelectUp } from "../../assets/icons/selectUp.svg";
 
 const LikedSection: FC = () => {
   const [isRating, setIsRating] = useState(true);
-  const [isPrice, setIsPrice] = useState(false);
+  const [isPrice, setIsPrice] = useState(true);
+  const [isButton, setIsButton] = useState(true);
   const favorites = useAppSelector((state) => state.favoriteReducer);
   const [hotels, setHotels] = useState<any>();
+
+  const sortedArr = hotels?.sort((a: any, b: any) => {
+    if (isButton) {
+      return !isRating ? a.stars - b.stars : b.stars - a.stars;
+    } else {
+      return !isPrice ? a.priceAvg - b.priceAvg : b.priceAvg - a.priceAvg;
+    }
+  });
 
   useEffect(() => {
     const arr = Object.entries(favorites);
@@ -25,18 +34,26 @@ const LikedSection: FC = () => {
           hotelId: hotel[0],
           ...hotel[1],
           isLiked: true,
-          // stars: hotel[1].stars,
         };
       });
       setHotels(res);
     }
   }, [favorites]);
 
-  // console.log(hotels);
+  const handleRating = () => {
+    if (isButton) {
+      setIsRating((prev) => !prev);
+    } else {
+      setIsButton(true);
+    }
+  };
 
-  const handleSelect = () => {
-    setIsRating((prev) => !prev);
-    setIsPrice((prev) => !prev);
+  const handlePrice = () => {
+    if (!isButton) {
+      setIsPrice((prev) => !prev);
+    } else {
+      setIsButton(false);
+    }
   };
 
   return (
@@ -44,20 +61,20 @@ const LikedSection: FC = () => {
       <h3 className={s.title}>Избранное</h3>
       <div className={s.buttons}>
         <button
-          onClick={handleSelect}
-          className={cn(s.button, isRating && s.buttonActive)}
+          onClick={handleRating}
+          className={cn(s.button, isButton && s.buttonActive)}
         >
-          Рейтинг {isRating ? <SelectActive /> : <Select />}
+          Рейтинг {isRating ? <SelectUp /> : <SelectDown />}
         </button>
         <button
-          onClick={handleSelect}
-          className={cn(s.button, isPrice && s.buttonActive)}
+          onClick={handlePrice}
+          className={cn(s.button, !isButton && s.buttonActive)}
         >
-          Цена {isPrice ? <SelectActive /> : <Select />}
+          Цена {isPrice ? <SelectUp /> : <SelectDown />}
         </button>
       </div>
       <div className={s.list}>
-        {hotels?.map((hotel: any, id: number) => {
+        {sortedArr?.map((hotel: any, id: number) => {
           return Object.keys(favorites).length === 0 ? null : (
             <HotelCard {...hotel} key={id} />
           );
