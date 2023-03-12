@@ -5,6 +5,7 @@ import { HotelCard } from "features";
 import { useAppSelector } from "redux/hooks";
 
 import { Hotel } from "shared/types/hotel";
+import { readDate } from "shared/helpers/date";
 
 import { ReactComponent as Location } from "../../assets/icons/location.svg";
 
@@ -18,6 +19,8 @@ const HotelSection: FC = () => {
   const favorites = useAppSelector((state) => state.favoriteReducer);
   const favoriteAmount = Object.entries(favorites).length;
 
+  const date = readDate(info.date);
+
   return (
     <Card className={s.container}>
       <div className={s.header}>
@@ -26,7 +29,7 @@ const HotelSection: FC = () => {
           <Location />
           <span>{hotels[0]?.location.name}</span>
         </h2>
-        <span className={s.date}>{info.date}</span>
+        <span className={s.date}>{date}</span>
       </div>
       <Slider />
       <div className={s.list}>
