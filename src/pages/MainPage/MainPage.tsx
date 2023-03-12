@@ -14,7 +14,7 @@ export const MainPage = () => {
         <div className={s.hotelSection}>
           <HotelSection />
         </div>
-        <LikedSection likedHotels={LikedSectionMock} />
+        <LikedSection />
       </div>
     </div>
   );
